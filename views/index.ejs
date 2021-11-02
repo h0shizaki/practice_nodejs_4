@@ -1,0 +1,11 @@
+<%- include('partials/header.ejs') -%>
+
+<%= title %> 
+
+<% data.forEach((mem, index) => { %>
+    <%= mem.first_name %>
+    <%= mem.department_name %>
+<% }) %>
+
+</body>
+</html>
