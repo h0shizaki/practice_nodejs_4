@@ -1,11 +1,38 @@
 <%- include('partials/header.ejs') -%>
 
-<%= title %> 
+<h2 style="text-align: center;margin-top: 1em;"><%= title %></h2>
 
-<% data.forEach((mem, index) => { %>
-    <%= mem.first_name %>
-    <%= mem.department_name %>
-<% }) %>
+<div class="container" style="margin-top: 1em;">
+    <a href='./addEmp' class="btn btn-success" style="float:right;margin:0.5em">Add employee</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Age</td>
+                <td>Department</td>
+                <td>Salary</td>
+                <td>Edit</td>
+                <td>Delete</td>
+                </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((mem, index) => { %>
+                <tr>
+                    <td><%= mem.id %></td>
+                    <td><%= mem.first_name %></td>
+                    <td><%= mem.last_name %></td>
+                    <td><%= mem.age %></td>
+                    <td><%= mem.department_name %></td>
+                    <td><%= mem.salary %></td>
+                    <td><a href='editEmp?id=<%= mem.id %>' class="btn btn-warning">Edit</a></td>
+                    <td><a href='delEmp?id=<%= mem.id %>' class="btn btn-danger">Delete</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

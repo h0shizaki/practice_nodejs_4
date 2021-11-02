@@ -6,7 +6,7 @@ module.exports = {
             if(error) throw error
 
             res.render('index.ejs', {
-                title : "Hello world",
+                title : "Employee table",
                 data : results
             })
             })
