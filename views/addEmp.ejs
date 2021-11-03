@@ -6,27 +6,28 @@
     <a href='./' class="btn btn-primary" style="float:right;margin:0.5em">Back</a>
 </div>
 
-<form class='form form-control' style="width:50%;margin:6em;margin-left:25%;text-align:left;">
+<form action="" class='form form-control' method="post" enctype="multipart/form-data" style="width:50%;margin:6em;margin-left:25%;text-align:left;">
     <br>
     First Name:
-    <input type='text' class="form form-control" id='fname' required><br>
+    <input type='text' class="form form-control" name='fname' required><br>
 
     Last Name:
-    <input type='text' class="form form-control" id='lname' required><br>    
+    <input type='text' class="form form-control" id='lname' name='lname' required><br>    
 
     Age:
-    <input type='number' class="form form-control" id='age' min='0' required><br>
+    <input type='number' class="form form-control" id='age' name='age' min='0' required><br>
 
     Salary:
-    <input type='number' class="form form-control" id='salary' min="0" required><br>
-    
-    <select class='form form-control' id='department'>
+    <input type='number' class="form form-control" id='salary' name='salary' min="0" required><br>
+
+    <select class='form form-control' id='department' name='department'>
         <% data.forEach( (dep, index)=>{
             %>
             <option value='<%= dep.department_id %>'> <%= dep.department_name %> </option>
             <%
         } )%>
     </select><br>
+
     <input type="submit" class='btn btn-success' value="Submit" style='margin-bottom:1em'>
 </form>
 
