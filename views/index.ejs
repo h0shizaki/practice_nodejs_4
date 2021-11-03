@@ -26,7 +26,7 @@
                     <td><%= mem.age %></td>
                     <td><%= mem.department_name %></td>
                     <td><%= mem.salary %></td>
-                    <td><a href='editEmp?id=<%= mem.id %>' class="btn btn-warning">Edit</a></td>
+                    <td><a href='edit<%= mem.id %>' class="btn btn-warning">Edit</a></td>
                     <td><a href='delEmp?id=<%= mem.id %>' class="btn btn-danger">Delete</a></td>
                 </tr>
             <% }) %>
