@@ -15,11 +15,11 @@ module.exports = {
     },
 
     addEmp : (req,res)=>{
-        const fname = req.body.fname;
-        const lname = req.body.lname;
-        const salary = req.body.salary;
-        const age = req.body.age;
-        const department = req.body.department_id;
+        const fname = req.query.fname;
+        const lname = req.query.lname;
+        const salary = req.query.salary;
+        const age = req.query.age;
+        const department = req.query.department_id;
 
          dbCon.query("INSERT INTO employee (first_name, last_name, salary, age, department_id) VALUE(?,?,?,?,?)",
          [fname, lname, salary, age, department], (error, result, field)=>{

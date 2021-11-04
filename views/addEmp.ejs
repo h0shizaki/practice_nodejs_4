@@ -6,21 +6,21 @@
     <a href='./' class="btn btn-primary" style="float:right;margin:0.5em">Back</a>
 </div>
 
-<form action="" class='form form-control' method="post" enctype="multipart/form-data" style="width:50%;margin:6em;margin-left:25%;text-align:left;">
+<form action="/insert" class='form form-control' method="get" enctype="multipart/form-data" style="width:50%;margin:6em;margin-left:25%;text-align:left;">
     <br>
     First Name:
-    <input type='text' class="form form-control" name='fname' id='fname' required><br>
+    <input type='text' class="form form-control" name='fname' required><br>
 
     Last Name:
-    <input type='text' class="form form-control" name='lname' id='lname' required><br>    
+    <input type='text' class="form form-control" name='lname' required><br>    
 
     Age:
-    <input type='number' class="form form-control" name='age' id='age' min='0' required><br>
+    <input type='number' class="form form-control" name='age' min='0' required><br>
 
     Salary:
-    <input type='number' class="form form-control"  name='salary' id='salary' min="0" required><br>
+    <input type='number' class="form form-control"  name='salary' min="0" required><br>
 
-    <select class='form form-control' id='department' name='department' required>
+    <select class='form form-control' name='department_id' required>
         <% data.forEach( (dep, index)=>{
             %>
             <option value='<%= dep.department_id %>'> <%= dep.department_name %> </option>
@@ -31,12 +31,5 @@
     <button type="submit" class='btn btn-success' style='margin-bottom:1em'>Submit</button>
    
 </form>
-<button onclick="test()">Test</button>
-<script>
-    function test(){
-    console.log(document.querySelector("#lname").value)
-    }
-    </script>
-
 </body>
 </html>

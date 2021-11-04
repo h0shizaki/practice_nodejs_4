@@ -5,7 +5,7 @@ const {getIndex} = require('./routes/index')
 const {addEmp, addEmpPage ,editEmp , editEmpPage} = require('./routes/employee')
 
 app.use(express.urlencoded({ extended: false}));
-app.use(express.json());
+app.use(express.json())
 
 app.set('views', __dirname+'/views');
 app.set('view engine', 'ejs')
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 app.get('/', getIndex)
 
 app.get('/add', addEmpPage)
-app.post('/add', (req,res)=> res.json(req.body)) //I'm dead here LOL
+app.get('/insert', addEmp) //I'm dead here LOL
 
 app.get('/edit:id', editEmpPage);
 
