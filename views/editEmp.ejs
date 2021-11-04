@@ -6,24 +6,31 @@
     <a href='./' class="btn btn-primary" style="float:right;margin:0.5em">Back</a>
 </div>
 
-<form action="" class='form form-control' method="post" enctype="multipart/form-data" style="width:50%;margin:6em;margin-left:25%;text-align:left;">
+<form action="/put" class='form form-control' method="get" enctype="multipart/form-data" style="width:50%;margin:6em;margin-left:25%;text-align:left;">
     <br>
     First Name:
-    <input type='text' class="form form-control" name='fname' id='fname' required><br>
+    <input type='text' class="form form-control" name='fname' id='fname' value="<%= emp[0].first_name %>" required><br>
 
     Last Name:
-    <input type='text' class="form form-control" name='lname' id='lname' required><br>    
+    <input type='text' class="form form-control" name='lname' id='lname' value="<%= emp[0].last_name %>" required><br>    
 
     Age:
-    <input type='number' class="form form-control" name='age' id='age' min='0' required><br>
+    <input type='number' class="form form-control" name='age' id='age' min='0' value="<%= emp[0].age %>" required><br>
 
     Salary:
-    <input type='number' class="form form-control"  name='salary' id='salary' min="0" required><br>
+    <input type='number' class="form form-control"  name='salary' id='salary' min="0" value="<%= emp[0].salary %>" required><br>
 
-    <select class='form form-control' id='department' name='department' required>
+    <input type='hidden' name='id' value="<%=emp[0].id%>">
+
+    <select class='form form-control' name='department_id' required>
         <% data.forEach( (dep, index)=>{
             %>
-            <option value='<%= dep.department_id %>'> <%= dep.department_name %> </option>
+            
+            <% if(emp[0].department_id == dep.department_id) { %>
+                <option value='<%= dep.department_id%>' selected><%= dep.department_name%></option>
+                <%} else{ %>
+                    <option value='<%= dep.department_id%>'><%= dep.department_name%></option>
+                    <%}%>
             <%
         } )%>
     </select><br>
